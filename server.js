@@ -5,6 +5,8 @@ const mongoose = require("mongoose");
 
 const app = express();
 
+const PORT = process.env.PORT || 3030;
+
 app.use(cors());
 app.use(express.json());
 
@@ -22,6 +24,6 @@ mongoose
 
  app.use("/api/user", userRoutes);
 
-app.listen(5000, () => {
-    console.log("server started on port 5000");
+app.listen(PORT, () => {
+    console.log(`server started on port ${PORT}`);
   });
